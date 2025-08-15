@@ -133,6 +133,8 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - MachineLearning:
+    - Arvore Decisão: ./arvore-decisao/main.md
   - Roteiros:
     - Roteiro 1: ./roteiro1/main.md
     - Roteiro 2: ./roteiro2/main.md
