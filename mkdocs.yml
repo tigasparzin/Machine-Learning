@@ -1,5 +1,5 @@
 site_name: Template de Entrega
-site_author: Theo Gaspar
+site_author: Theo Camuri Gaspar
 site_url: https://tigasparzin.github.io/machine-learning
 repo_url: https://github.com/tigasparzin/machine-learning
 repo_name: github/machine-learning
@@ -133,6 +133,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Arvore de decisao: ./arvore-decisao/main.md
   - Roteiros:
     - Roteiro 1: ./roteiro1/main.md
     - Roteiro 2: ./roteiro2/main.md
