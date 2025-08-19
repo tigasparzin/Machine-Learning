@@ -131,6 +131,7 @@ extra_javascript:
   - https://fastly.jsdelivr.net/npm/jquery/dist/jquery.min.js
   - https://fastly.jsdelivr.net/npm/echarts/dist/echarts.min.js
 
+
 nav:
   - Home: index.md
   - Arvore de decisao: ./arvore-decisao/main.md
