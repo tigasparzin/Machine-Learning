@@ -1,8 +1,8 @@
-site_name: Machine Learning
+site_name: Template de Entrega
 site_author: Theo Gaspar
-site_url: https://tigasparzin.github.io/Machine-Learning
-repo_url: https://github.com/tigasparzin/Machine-Learning
-repo_name: github/Machine-Learning
+site_url: https://tigasparzin.github.io/machine-learning
+repo_url: https://github.com/tigasparzin/machine-learning
+repo_name: github/machine-learning
 
 theme:
   name: material
@@ -110,7 +110,7 @@ plugins:
       enable_creation_date: true
   - git-authors
   - git-committers:
-      repository: tigasparzin/tigasparzin.github.com
+      repository: hsandmann/hsandmann.github.com
       branch: main
   - search
   - badges
@@ -133,11 +133,10 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - MachineLearning:
-    - Arvore Decisão: ./arvore-decisao/main.md
   - Roteiros:
     - Roteiro 1: ./roteiro1/main.md
     - Roteiro 2: ./roteiro2/main.md
     - Roteiro 3: ./roteiro3/main.md
     - Roteiro 4: ./roteiro4/main.md
+    - Roteiro A: ./roteiroA/main.md
   - Projeto: ./projeto/main.md
