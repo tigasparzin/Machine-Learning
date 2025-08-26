@@ -43,7 +43,7 @@ plt.figure(figsize=(12, 10))
 df = pd.read_csv('./data/Stress.csv')
 
 # Variáveis de entrada e alvo
-X = preprocess(df.copy())
+X = preprocess(df)
 y = df['Stress']
 
 # Dividir os dados em conjuntos de treinamento e teste

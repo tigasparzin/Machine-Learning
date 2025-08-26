@@ -49,7 +49,7 @@ target (y): índice de estresse acadêmico (1 a 5).
 
 ##	Treinamento do Modelo
 
-```python exec="1" html="0"
+```python exec="1" html="1"
 --8<-- "docs/arvore-decisao/student_decision_tree.py"
 ```
 
