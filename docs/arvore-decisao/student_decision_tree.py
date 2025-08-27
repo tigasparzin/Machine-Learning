@@ -40,7 +40,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
 plt.figure(figsize=(12, 10))
 
 # Carregar base
-df = pd.read_csv('./data/Stress.csv')
+df = pd.read_csv('./data/StressExp.csv')
 
 # Variáveis de entrada e alvo
 X = preprocess(df)
@@ -48,7 +48,7 @@ y = df['Stress']
 
 # Dividir os dados em conjuntos de treinamento e teste
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=42
+    X, y, test_size=0.2, random_state=42
 )
 
 # Criar e treinar o modelo de árvore de decisão

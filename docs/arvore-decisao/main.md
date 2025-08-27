@@ -44,8 +44,7 @@ target (y): índice de estresse acadêmico (1 a 5).
 
 
 ##	Divisão dos Dados
-
-70% dos registros da base serão separados para treino e 30% separados para testes de acuracia
+80% dos registros da base foram separados para treino e 20% separados para testes de acuracia
 
 ##	Treinamento do Modelo
 
@@ -53,7 +52,42 @@ target (y): índice de estresse acadêmico (1 a 5).
 --8<-- "docs/arvore-decisao/student_decision_tree.py"
 ```
 
+
+=== "decision tree"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/arvore-decisao/student_decision_tree.py"
+    ```
+
+
+=== "code"
+
+    ```python exec="0"
+    --8<-- "docs/arvore-decisao/student_decision_tree.py"
+    ```
+
+
 ##	Avaliação do Modelo
+
+Rodando o modelo e prestando mais atenção na base, percebi que haviam apenas 15 registros onde meu target era menor do que 3, o que acabava deixando meu modelo com underfittig, tendo acuracia de apenas 36%.
+Para solucionar este problema, criei dados sinteticos. Balanceando a quantidade de dados em cada nivel de stress
+
+#### População da base.
+
+Fui adicionando registros aos poucos, para tentar chegar no melhor resultado com a menor quantidade de dados sintéticos possivel.
+Para chegar no modelo atual, distribuí 100 novos registros da seguinte maneira:
+
+    Stress = 1 → +30 registros
+    Stress = 2 → +27 registros
+    Stress = 3 → +20 registros
+    Stress = 4 → +0 registros
+    Stress = 5 → +23 registro
+
+Após essas alterações, a acuracia subiu para 73%.
 
 
 ##  Conclusão
+
+Ao realizar esse projeto, entendi a necessidade de fazer um pré-processamento dos dados, visto que nem sempre a base virá de acordo com o que o projeto exige e também o impacto de que a frequencia dos dados registrados impacta diretamente na acuracia.
+Diante de um problema na precisão do meu modelo, tive que buscar soluções alternativas, como a geração de daos sintéticos.
+Acho válido adicionar também que avaliar se a acuracia está boa ou não, dependeria da proposta do projeto, visto que casos diferentes tem consequencias diferentes.
