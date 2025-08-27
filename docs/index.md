@@ -8,19 +8,10 @@
 
 ## Grupo/Kit X
 
-1. João da Silva
-1. Pedro de Souza
-1. Maria Oliveira
-1. Grupo K
-    - João da Silva
-    - Pedro de Souza
+1. Theo Camuri Gaspar
+Grupo - Masked Penguins:
+    
 
-
-
-!!! tip "Instruções"
-
-    Vocês devem utilizar este template como um bloco de notas para registrar o que foi feito e o que falta fazer. Vocês devem adicionar as informações necessárias.
-    O template deve ser editado e atualizado a cada entrega, registrando assim a data de entrega e o que foi feito até o momento via Git.
 
 ## Entregas
 

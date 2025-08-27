@@ -40,7 +40,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
 plt.figure(figsize=(12, 10))
 
 # Carregar base
-df = pd.read_csv('./data/StressExp.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/tigasparzin/Machine-Learning/refs/heads/main/data/StressExp.csv')
 
 # Variáveis de entrada e alvo
 X = preprocess(df)
