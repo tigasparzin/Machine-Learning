@@ -64,5 +64,10 @@ target (y): índice de estresse acadêmico (1 a 5).
 
 ##	Avaliação do Modelo
 
+=== "code"
+
+    ```python exec="1"
+    --8<-- "docs/KNN/confusionMatrix.py"
+    ```
 
 ##  Conclusão
