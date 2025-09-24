@@ -25,16 +25,16 @@ A base possui **280 registros** e **9 colunas**.
 ##	Pré-processamento
 
 #### Remoção de colunas irrelevantes
-A coluna **Timestamp** é removida por não agregar informações para a previsão.
+A coluna **Timestamp** foi removida por não agregar informações para a previsão.
 
 #### Variável-alvo
 A variável alvo é **Stress** (*índice de estresse acadêmico*, de 1 a 5).
 
 #### Tratamento de valores ausentes
-Se existir valor nulo em **StudyEnv** (ambiente de estudo), preencher com o **moda** (geralmente “Peaceful”).
+Foi identificado apenas um valor nulo em **StudyEnv** (ambiente de estudo), que foi preenchido com o valor mais frequente (*Peaceful*).
 
 #### Codificação de variáveis categóricas
-As colunas **AcademicStage**, **StudyEnv**, **Strategy** e **BadHabits** são categóricas e são convertidas para valores numéricos via **Label Encoding**.
+As colunas **AcademicStage**, **StudyEnv**, **Strategy** e **BadHabits** são categóricas e foram convertidas para valores numéricos utilizando **Label Encoding**.
 
 #### Features e target
 
@@ -44,7 +44,7 @@ As colunas **AcademicStage**, **StudyEnv**, **Strategy** e **BadHabits** são ca
 ---
 
 ##	Divisão dos Dados
-Separação **estratificada** em **80% treino** e **20% teste**, preservando a proporção das classes do alvo.
+Os dados foram divididos de forma **estratificada** em **80% treino** e **20% teste**, garantindo que as proporções entre as classes de estresse fossem preservadas.
 
 ---
 
@@ -84,5 +84,12 @@ Separação **estratificada** em **80% treino** e **20% teste**, preservando a p
 
 ##  Conclusão
 
-O **KNN** é simples e eficiente quando há uma boa representação de vizinhança no espaço de atributos. Neste caso, o **desbalanceamento das classes** do *Stress* influencia as métricas e pode reduzir a acurácia. Ajustes como **balanceamento**, **normalização**, **escolha adequada de _k_** e, quando fizer sentido, **binarização do alvo**, tendem a melhorar os resultados. A interpretação dos achados deve considerar o objetivo do projeto e o custo de erros por classe (por exemplo, confundir estresse alto com baixo).
+O uso do **KNN** nesta base evidenciou pontos importantes para o aprendizado:
 
+- O **desbalanceamento das classes** afeta a performance: níveis baixos de estresse (1 e 2) são pouco representados, o que dificulta acertos nessas classes.  
+- O modelo se mostrou **sensível à escolha das variáveis de entrada** e ao valor de *k*. Testes com diferentes combinações podem alterar significativamente a acurácia.  
+- A **normalização/standardização das variáveis numéricas** é fundamental para que todas as features tenham peso similar na distância euclidiana usada pelo KNN.  
+- Técnicas como **oversampling (SMOTE)** ou até a **binarização do alvo** (baixo vs. alto estresse) podem ser boas alternativas dependendo do objetivo da análise.  
+- A **interpretação do modelo** deve considerar o contexto: um erro em classificar estresse alto como baixo pode ter impacto maior do que o inverso, exigindo avaliação não apenas por acurácia, mas também por métricas como *recall* e *f1-score* em classes específicas.
+
+Assim, o projeto reforça a importância do **pré-processamento cuidadoso**, da atenção ao **balanceamento de classes** e da análise crítica dos resultados para que o modelo seja útil de acordo com o problema real. 

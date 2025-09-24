@@ -2,12 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from io import StringIO
 from sklearn.preprocessing import LabelEncoder
-from sklearn.datasets import make_classification
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
-import seaborn as sns
+from sklearn.cluster import KMeans
 import pandas as pd
+
 
 plt.figure(figsize=(12, 10))
 
@@ -46,35 +43,25 @@ df = pd.read_csv('https://raw.githubusercontent.com/tigasparzin/Machine-Learning
 
 # Variáveis de entrada e alvo
 X = preprocess(df)
-y = df['Stress']
 
-# Dividir os dados em conjuntos de treinamento e teste
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
+# Run K-Means
+kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=100, random_state=42)
+labels = kmeans.fit_predict(X)
 
-# Train KNN model
-knn = KNeighborsClassifier(n_neighbors=3)
-knn.fit(X_train, y_train)
-predictions = knn.predict(X_test)
-print(f"Accuracy: {accuracy_score(y_test, predictions):.2f}")
+# Plot results
+plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50)
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], 
+           c='red', marker='*', s=200, label='Centroids')
+plt.title('K-Means Clustering Results')
+plt.xlabel('Feature 1')
+plt.ylabel('Feature 2')
+plt.legend()
 
-# Visualize decision boundary
-h = 0.02  # Step size in mesh
-x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+# # Print centroids and inertia
+# print("Final centroids:", kmeans.cluster_centers_)
+# print("Inertia (WCSS):", kmeans.inertia_)
 
-Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
-Z = Z.reshape(xx.shape)
-
-plt.contourf(xx, yy, Z, cmap=plt.cm.RdYlBu, alpha=0.3)
-sns.scatterplot(x=X[:, 0], y=X[:, 1], hue=y, style=y, palette="deep", s=100)
-plt.xlabel("Feature 1")
-plt.ylabel("Feature 2")
-plt.title("KNN Decision Boundary (k=3)")
-
-# Display the plot
+# # Display the plot
 buffer = StringIO()
 plt.savefig(buffer, format="svg", transparent=True)
 print(buffer.getvalue())
