@@ -24,7 +24,6 @@ As variáveis são relacionadas ao perfil acadêmico dos alunos, pressões perce
 - A variável **Stress** foi **removida das features** para o K-Means, sendo utilizada apenas na avaliação posterior.  
 - As features numéricas foram **padronizadas** com `StandardScaler` para garantir que todas tenham a mesma escala.  
 
----
 
 ## Clustering K-Means
 

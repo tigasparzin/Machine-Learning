@@ -10,14 +10,16 @@ theme:
     # primary: grey
     # Light mode
     - scheme: default
-      primary: grey
+      primary: red
+      accent: amber
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: grey
+      primary: red
+      accent: amber
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -25,14 +27,16 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
-      primary: grey
+      primary: red
+      accent: amber
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: grey
+      primary: red
+      accent: amber
       scheme: slate
       toggle:
         icon: material/toggle-switch
@@ -138,7 +142,6 @@ nav:
     - Arvore de decisao: ./arvore-decisao/main.md
     - KNN: ./KNN/main.md
     - K-Means: ./K-Means/main.md
-    - Metricas: ./roteiro3/main.md
+    - Metricas: ./Metricas/main.md
     - Roteiro 4: ./roteiro4/main.md
-    - Roteiro A: ./roteiroA/main.md
   - Projeto: ./projeto/main.md

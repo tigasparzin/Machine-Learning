@@ -28,7 +28,8 @@ A base possui **280 registros** e **9 colunas**.
 A coluna **Timestamp** foi removida por não agregar informações para a previsão.
 
 #### Variável-alvo
-A variável alvo é **Stress** (*índice de estresse acadêmico*, de 1 a 5).
+A variável alvo é **Stress**.
+Por problemas na acuracia do modelo e após alguns testes, decidi que ao invés de utilizar 5 grupos, um para cada tipo de stress, dividi em apenas 2, onde 1 o  nivel é abaixo de 3 e 0, onde o nível é 3 ou maior
 
 #### Tratamento de valores ausentes
 Foi identificado apenas um valor nulo em **StudyEnv** (ambiente de estudo), que foi preenchido com o valor mais frequente (*Peaceful*).
@@ -39,7 +40,8 @@ As colunas **AcademicStage**, **StudyEnv**, **Strategy** e **BadHabits** são ca
 #### Features e target
 
 **features (X)**: estágio acadêmico, pressão dos colegas, pressão da família, ambiente de estudo, estratégia de enfrentamento, hábitos nocivos, nível de competição acadêmica.  
-**target (y)**: índice de estresse acadêmico (1 a 5).
+
+**target (y)**: índice de estresse acadêmico.
 
 ---
 
@@ -80,15 +82,20 @@ Os dados foram divididos de forma **estratificada** em **80% treino** e **20% te
     --8<-- "docs/KNN/confusionMatrix.py"
     ```
 
+### Sobre binarização no alvo
+Durante os primeiros modelos de teste, com os 5 niveis de estresse, estava tendo resultados com acuracias como 52% e após mudanças no modelo para tentar aumentar esse valor, chegando até no maximo 65%, então percebi que o erro poderia estar, na quantidade, assim tive a ideia de classificar os niveis de estresse como altos (=< 3) e baixos(< 3), assim chegando em uma acuracia de 82%.
+
 
 ##  Conclusão
 
 O uso do **KNN** nesta base evidenciou pontos importantes para o aprendizado:
 
-- O **desbalanceamento das classes** afeta a performance: níveis baixos de estresse (1 e 2) são pouco representados, o que dificulta acertos nessas classes.  
-- O modelo se mostrou **sensível à escolha das variáveis de entrada** e ao valor de *k*. Testes com diferentes combinações podem alterar significativamente a acurácia.  
-- A **normalização/standardização das variáveis numéricas** é fundamental para que todas as features tenham peso similar na distância euclidiana usada pelo KNN.  
-- Técnicas como **oversampling (SMOTE)** ou até a **binarização do alvo** (baixo vs. alto estresse) podem ser boas alternativas dependendo do objetivo da análise.  
-- A **interpretação do modelo** deve considerar o contexto: um erro em classificar estresse alto como baixo pode ter impacto maior do que o inverso, exigindo avaliação não apenas por acurácia, mas também por métricas como *recall* e *f1-score* em classes específicas.
+- O **desbalanceamento das classes** afeta a performance: níveis baixos de estresse (1 e 2) são pouco representados, o que dificulta acertos nessas classes.
 
-Assim, o projeto reforça a importância do **pré-processamento cuidadoso**, da atenção ao **balanceamento de classes** e da análise crítica dos resultados para que o modelo seja útil de acordo com o problema real. 
+- O modelo se mostrou **sensível à escolha das variáveis de entrada** e ao valor de *k*. Testes com diferentes combinações podem alterar significativamente a acurácia.  
+
+- A **normalização/standardização das variáveis numéricas** é fundamental para que todas as features tenham peso similar na distância euclidiana usada pelo KNN.  
+
+- Técnicas como **binarização do alvo** (baixo vs. alto estresse) podem ser boas alternativas dependendo do objetivo da análise.  
+
+Assim, o projeto reforça a importância do **pré-processamento cuidadoso**, da atenção ao **balanceamento de classes** e da análise crítica dos resultados para que o modelo seja útil de acordo com o problema real.
