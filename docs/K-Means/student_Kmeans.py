@@ -44,7 +44,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/tigasparzin/Machine-Learning
 X = preprocess(df)
 
 #run Kmeans
-kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=100, random_state=42)
+kmeans = KMeans(n_clusters=5, init='k-means++', max_iter=100, random_state=42)
 labels = kmeans.fit_predict(X)
 
 #Plot
