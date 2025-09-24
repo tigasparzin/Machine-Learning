@@ -53,14 +53,14 @@ Os dados foram divididos de forma **estratificada** em **80% treino** e **20% te
 === "KNN"
 
     ```python exec="1" html="1"
-    --8<-- "docs/KNN/student_KNN.py"
+    --8<-- "docs/KNN/student_knn.py"
     ```
 
 
 === "code"
 
     ```python exec="0"
-    --8<-- "docs/KNN/student_KNN.py"
+    --8<-- "docs/KNN/student_knn.py"
     ```
 
 
