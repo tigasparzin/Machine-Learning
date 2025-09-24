@@ -64,7 +64,6 @@ Os dados foram divididos de forma **estratificada** em **80% treino** e **20% te
     ```
 
 
-
 ##	Avaliação do Modelo
 
 
