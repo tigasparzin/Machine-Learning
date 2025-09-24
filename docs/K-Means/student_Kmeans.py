@@ -40,17 +40,20 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
 # Carregar base
 df = pd.read_csv('https://raw.githubusercontent.com/tigasparzin/Machine-Learning/refs/heads/main/data/StressExp.csv')
 
-# Variáveis de entrada e alvo
+
 X = preprocess(df)
 
-# Run K-Means
+#run Kmeans
 kmeans = KMeans(n_clusters=3, init='k-means++', max_iter=100, random_state=42)
 labels = kmeans.fit_predict(X)
 
-# Plot results
-plt.scatter(X[:, 0], X[:, 1], c=labels, cmap='viridis', s=50)
-plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], 
-           c='red', marker='*', s=200, label='Centroids')
+#Plot
+plt.scatter(X.iloc[:, 0], X.iloc[:, 1], c=labels, cmap='viridis', s=50)
+cent = kmeans.cluster_centers_
+plt.scatter(cent[:, 0], cent[:, 1], c='red', marker='*', s=200, label='Centroids')
+
+
+
 plt.title('K-Means Clustering Results')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
