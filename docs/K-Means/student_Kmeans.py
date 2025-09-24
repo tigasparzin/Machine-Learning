@@ -37,7 +37,6 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
 
     return df[features]
 
-
 # Carregar base
 df = pd.read_csv('https://raw.githubusercontent.com/tigasparzin/Machine-Learning/refs/heads/main/data/StressExp.csv')
 
