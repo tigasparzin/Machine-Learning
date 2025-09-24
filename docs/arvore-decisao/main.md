@@ -18,6 +18,10 @@ A base possui 140 registros e 9 colunas.
 
 *Índice de estresse*: Classificar o nivel de estresse academico, em uma escala de 1 a 5, tendo média de 3,72.
 
+```python exec="1"
+--8<-- "docs/arvore-decisao/studentSample.py"
+```
+
 ---
 
 ##	Pré-processamento

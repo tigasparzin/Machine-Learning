@@ -20,6 +20,10 @@ A base possui **280 registros** e **9 colunas**.
 
 *Índice de estresse*: Nível de estresse acadêmico (escala de 1 a 5).
 
+```python exec="1"
+--8<-- "docs/arvore-decisao/studentSample.py"
+```
+
 ---
 
 ##	Pré-processamento

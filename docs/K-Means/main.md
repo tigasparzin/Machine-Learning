@@ -14,6 +14,10 @@ As variáveis são relacionadas ao perfil acadêmico dos alunos, pressões perce
 - **AcademicComp**: Competição acadêmica (escala 1–5).  
 - **Stress**: Nível de estresse (1–5). Usado apenas como **validação externa**.  
 
+```python exec="1"
+--8<-- "docs/arvore-decisao/studentSample.py"
+```
+
 ---
 
 ## Pré-processamento
