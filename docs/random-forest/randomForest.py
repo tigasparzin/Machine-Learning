@@ -6,8 +6,7 @@ from sklearn.metrics import accuracy_score
 # Carregar base
 df = pd.read_csv("https://raw.githubusercontent.com/tigasparzin/Machine-Learning/refs/heads/main/data/StressExp.csv")
 
-# Target binário (alto >=3 -> 0, baixo <3 -> 1)
-y = (df["Stress"] >= 3).map({True: 0, False: 1})
+y = (df["Stress"])
 
 # Features fixas da base
 X = df.drop(columns=["Timestamp", "Stress"])

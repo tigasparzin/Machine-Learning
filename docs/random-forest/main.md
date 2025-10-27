@@ -45,7 +45,7 @@ O pipeline atual usa **Label Encoding** — válido para modelos de árvore.
 
 ## Binarização
 Aproveitei o modelo KNN feito anteriormente e mantive a binarização do target neste modelo.
-(niveis de estresse menores ou iguais a 3 são classificados como "baixo" e maiores que 3 como "alto")
+(niveis de estresse menores ou iguais a 3 são classificados como "baixo" e maiores que 3 como "alto"), porém após rodar o modelo, acabou resultando num overfitting (97% de acurácia), assim, a binarização foi revertida.
 
 ##	Treinamento do Modelo
 
@@ -57,7 +57,7 @@ Aproveitei o modelo KNN feito anteriormente e mantive a binarização do target 
 
 ##	Avaliação do Modelo
 
-No modelo **Random Forest**, a **acurácia** foi de **~0.70**.  
+No modelo **Random Forest**, a **acurácia** foi de **~0.66** .  
 
 
 === "avaliacao do modelo"
