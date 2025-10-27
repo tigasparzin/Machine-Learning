@@ -57,7 +57,7 @@ Aproveitei o modelo KNN feito anteriormente e mantive a binarização do target 
 
 ##	Avaliação do Modelo
 
-No modelo **Random Forest**, a **acurácia** foi de **~0.66** .  
+No modelo **Random Forest**, a **acurácia** foi de **~0.62** .  
 
 
 === "avaliacao do modelo"
@@ -74,6 +74,10 @@ No modelo **Random Forest**, a **acurácia** foi de **~0.66** .
 
 ## Conclusão
 
+- Analisando nossa matriz de confusão, é perceptivel que o modelo teve desempenho mediano (Accuracy ≈ 0,63; Macro-F1 ≈ 0,63) com confusão forte entre níveis altos (4↔5). Bom em 1–2, fraco no nivel 4.
+- A informação anterior explica bem o por que, em testes anteriores, quando utilizei apenas: niveis baixos (1,2 e 3) e niveis altos (4 e 5), acabei caindo em overfitting, visto que o modelo causa confusão entre niveis maiores.
+- Top features: AcademicComp (0,232) > HomePressure (0,179) > BadHabits (0,177) > PeerPressure (0,149) > StudyEnv/Strategy, ou seja, o modelo propoe que os maiores causadores de estresse entre alunos, são: competitividade, pressao sofrida pelos familiares, habitos ruins (beber/fumar), pressao sofrida pelos amigos, tendo por ultimo ambiente de estudo e estrategia para lidar com estresse.
 
+- Pensando em ideias para deixar o modelo balanceado, imagino que a melhor decisão seria criar 3 niveis: Alto(4 e 5), medio (3) e baixo (1 e 2), ou então distribuir manualmente os pesos, fazendo com que erros no nivel 4 sejam mais penalizados.
 
 
