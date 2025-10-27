@@ -43,15 +43,13 @@ O pipeline atual usa **Label Encoding** — válido para modelos de árvore.
 ##	Divisão dos Dados
 80% dos registros foram separados para treino e 20% para teste.  
 
+## Binarização
+Aproveitei o modelo KNN feito anteriormente e mantive a binarização do target neste modelo.
+(niveis de estresse menores ou iguais a 3 são classificados como "baixo" e maiores que 3 como "alto")
+
 ##	Treinamento do Modelo
 
-=== "random forest"
-
-    ```python exec="1" html="1"
-    --8<-- "docs/random-forest/randomForest.py"
-    ```
-
-=== "code"
+=== "random forest code"
 
     ```python exec="0"
     --8<-- "docs/random-forest/randomForest.py"
@@ -62,19 +60,20 @@ O pipeline atual usa **Label Encoding** — válido para modelos de árvore.
 No modelo **Random Forest**, a **acurácia** foi de **~0.70**.  
 
 
-=== "Confusion Matrix"
+=== "avaliacao do modelo"
 
     ```python exec="1" html="1"
-    --8<-- "docs/random-forest/confusionMatrix.py"
+    --8<-- "docs/random-forest/avaliacao.py"
     ```
-
-
 === "code"
 
     ```python exec="0"
-    --8<-- "docs/random-forest/confusionMatrix.py"
-    
+    --8<-- "docs/random-forest/avaliacao.py"
+    ```
 
 
-##	Conclusão
+## Conclusão
+
+
+
 
