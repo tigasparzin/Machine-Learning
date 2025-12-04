@@ -62,6 +62,18 @@ O script treina quatro SVMs com `C = 1`, variando o kernel:
 - **Poly**
 - **RBF**
 
+=== "avaliacao do modelo"
+
+    ```python exec="1" html="1"
+    --8<-- "docs/SVM/SVM.py"
+    ```
+=== "code"
+
+    ```python exec="0"
+    --8<-- "docs/SVM/SVM.py"
+    ```
+
+
 Após treinar, o código plota as regiões de decisão em 2D, permitindo comparação visual.
 
 ### Comportamento esperado dos kernels
