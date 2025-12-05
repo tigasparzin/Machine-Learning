@@ -76,37 +76,19 @@ O script treina quatro SVMs com `C = 1`, variando o kernel:
 
 Após treinar, o código plota as regiões de decisão em 2D, permitindo comparação visual.
 
-### Comportamento esperado dos kernels
-
-- **Linear** → fronteira simples; pode underfittar se as classes não forem lineares.  
-- **Poly** → mais flexível; pode overfittar dependendo do grau.  
-- **RBF** → geralmente o mais robusto; cria regiões suaves ao redor das classes.  
-- **Sigmoid** → instável sem normalização; costuma performar abaixo do RBF.
-
----
 
 ## Avaliação do Modelo
 
 Como não há métricas, apenas observações qualitativas podem ser feitas:
 
 - Usar duas features limita severamente o poder do modelo.  
-- A binarização ajuda o SVM, pois a tarefa vira binária (caso ideal do algoritmo).  
 - Kernels não lineares provavelmente mostram melhor separação visual.  
-- Sem normalização e sem teste, não é possível afirmar desempenho real.
 
-Para um modelo comparável ao Random Forest, seria necessário incluir:
 
-- `train_test_split`
-- `StandardScaler`
-- métricas (accuracy, F1, matriz de confusão)
-- todas as variáveis relevantes
-
----
 
 ## Conclusão
 
 - O SVM binário é mais coerente com a estrutura do algoritmo.  
 - O experimento atual é útil para **visualização didática** das fronteiras de decisão.  
-- Não deve ser interpretado como modelo final ou validado.  
-- Para uma análise robusta, recomenda-se incluir métricas, normalização e mais atributos.
+- Para uma análise robusta, seria melhor utilizar normalização e mais atributos.
 
